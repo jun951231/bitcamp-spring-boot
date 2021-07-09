@@ -13,10 +13,10 @@ public class DogController {
         DogService dogService = new DogServiceImpl();
         System.out.println("색");
         dog.setColor(scanner.next());
-        System.out.println("개체");
-        dog.setKind(scanner.next());
         System.out.println("품종");
         dog.setBreed(scanner.next());
+        System.out.println("개체");
+        dog.setKind(scanner.next());
         String result ="";
         switch (dog.getKind()) {
 
@@ -26,8 +26,8 @@ public class DogController {
         }
         System.out.printf( "%s %s %s= %s",
                 dog.getColor(),
-                dog.getKind(),
                 dog.getBreed(),
+                dog.getKind(),
                 result
                 );
 

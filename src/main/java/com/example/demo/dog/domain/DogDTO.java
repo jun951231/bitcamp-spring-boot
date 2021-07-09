@@ -39,7 +39,7 @@ public class DogDTO {
 
     @Override
     public String toString(){
-        return String.format ("이름은 %s, 색은 %s, 품종은 %s, 배고픔은 %s.", name, color, breed, hungry);
+        return String.format ("이름은 %s, 색은 %s, 품종은 %s, 배고픔은 %s 개체는 %s.", name, color, breed, hungry, kind);
     }
 }
 
