@@ -1,11 +1,15 @@
-package com.example.demo.BankAccout.domain;
+package com.example.demo.BankAccount.domain;
 
 public class BankAccountDTO {
+    private String name;
+    private String accountNumber;
+    private int money;
+    private String bankName;
+    private String date;
+    private float interest;
+
     int balance = 0; // 예금 잔액
 
-    public BankAccountDTO(){
-        System.out.println("생성자 호출");
-    }
     public int deposit(int amount){
         balance += amount;
         return balance;

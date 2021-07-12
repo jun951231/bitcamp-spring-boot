@@ -1,6 +1,6 @@
-package com.example.demo.BankAccout.controller;
+package com.example.demo.BankAccount.controller;
 
-import com.example.demo.BankAccout.domain.BankAccountDTO;
+import com.example.demo.BankAccount.domain.BankAccountDTO;
 
 public class BankAccountController {
     public static void main(String[] args) {

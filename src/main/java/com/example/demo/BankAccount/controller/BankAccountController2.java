@@ -1,4 +1,4 @@
-package com.example.demo.BankAccout.controller;
+package com.example.demo.BankAccount.controller;
 
 class BankAccountController2 {
     String accNumber;   // 계좌번호

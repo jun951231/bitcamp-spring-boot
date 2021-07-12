@@ -1,7 +1,7 @@
-package com.example.demo.BankAccout;
+package com.example.demo.BankAccount;
 
 
-import com.example.demo.BankAccout.domain.BankAccountDTO;
+import com.example.demo.BankAccount.domain.BankAccountDTO;
 
 public class BankAccountUniID {
     public static void main(String[] args) {
