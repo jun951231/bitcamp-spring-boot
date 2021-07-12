@@ -7,30 +7,25 @@ import com.example.demo.bicycle.service.BicycleServiceImpl;
 import java.util.Scanner;
 
 public class BicycleController/*main*/{
-    Scanner scanner = new Scanner(System.in);
-    BicycleDTO bi = new BicycleDTO();
-    BicycleService bicycleService = new BicycleServiceImpl();
+    private BicycleService bicycleService;
+    private BicycleDTO bicycle;
+    private Scanner scanner;
 
-    public void BicycleInfo(){
-        System.out.println("몇 기어?");
-        bi.setGear(scanner.next());
-        System.out.println("회사는 어디?");
-        bi.setCompany(scanner.next());
-        System.out.println("속도는 얼마?");
-        bi.setSpeed(scanner.nextInt());
-        String result = "";
-        switch (bi.getCompany()){
-            case "":
-                result = bicycleService.information(bi);
-            break;
-        }
-        System.out.printf( " %s = %s",
-            bi.getCompany(),
-            result);
+    public BicycleController(){
+        this.bicycleService = new BicycleServiceImpl();
+        this.bicycle = new BicycleDTO();
+        this.scanner = new Scanner(System.in);
     }
-public void information(){
-    System.out.println("자전거 회사");
-    bi.setCompany(scanner.next());
+
+        public void main() {
+        BicycleDTO bicycleDTO = new BicycleDTO();
+        System.out.println("기어가 몇단?");
+        bicycle.setGear(scanner.nextInt());
+        System.out.println("페달은 무엇");
+        bicycle.setPedal(scanner.next());
+        System.out.println("속도는 얼마");
+        bicycle.setSpeed(scanner.nextInt());
+        System.out.print(bicycle.toString());
     }
 
 }

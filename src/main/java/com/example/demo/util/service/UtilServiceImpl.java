@@ -7,12 +7,16 @@ import java.time.LocalTime;
 
 public class UtilServiceImpl implements UtilService{
 
+    private UtilDTO util;
+
+    public UtilServiceImpl(){
+        this.util = new UtilDTO();
+    }
+
     @Override
     public String todayAndCurrenttime() {
         return String.format("%s %s", Today(), CurrentTime());
     }
-
-    UtilDTO util = new UtilDTO();
 
     @Override
     public LocalDate Today() {

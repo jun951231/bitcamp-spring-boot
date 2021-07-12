@@ -5,7 +5,9 @@ import com.example.demo.dog.domain.DogDTO;
 //barking, fetching, wagging tail
 public interface DogService {
 
-    String info(DogDTO dog);
+    String barking (String bark);
+    String fetching (String target);
+    String waggingTail();
 
 
 }

@@ -12,6 +12,7 @@ public class UtilController {
     private UtilService utilService = new UtilServiceImpl();
 
 
+
         public void todayAndCurrentTime(){
         System.out.println(utilService.todayAndCurrenttime());
 

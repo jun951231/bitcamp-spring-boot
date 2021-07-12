@@ -5,7 +5,17 @@ import com.example.demo.bicycle.domain.BicycleDTO;
 public class BicycleServiceImpl implements BicycleService{
 
     @Override
-    public String information(BicycleDTO bi) {
-        return bi.getCompany();
+    public void changingGear() {
+
+    }
+
+    @Override
+    public void changingPedalCadence() {
+
+    }
+
+    @Override
+    public void applyingBrakes() {
+
     }
 }

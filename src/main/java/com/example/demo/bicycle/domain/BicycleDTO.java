@@ -1,36 +1,15 @@
 package com.example.demo.bicycle.domain;
 
+import lombok.Data;
+
+@Data
 public class BicycleDTO {
-    private String gear;
-    private String company;
+    private int gear;
+    private String pedal;
     private int speed;
-
-    public void setGear(String gear) {
-        this.gear = gear;
-    }
-
-    public String getGear() {
-        return this.gear;
-    }
-
-    public void setCompany(String company) {
-        this.company = company;
-    }
-
-    public String getCompany() {
-        return this.company;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
-    public int getSpeed() {
-        return this.speed;
-    }
 
     @Override
     public String toString() {
-        return String.format("기어는 %s, 회사는 %s, 속도는 %d.", gear, company, speed);
+        return String.format("기어: %d \n페달 :%s, \n스피드: %dkm.", gear,pedal, speed);
     }
 }

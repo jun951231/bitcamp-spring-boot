@@ -4,9 +4,18 @@ import com.example.demo.dog.domain.DogDTO;
 
 public class DogServiceImpl implements DogService {
 
+    @Override
+    public String barking(String bark) {
+        return null;
+    }
 
     @Override
-    public String info(DogDTO dog) {
-        return dog.getColor() + dog.getBreed();
+    public String fetching(String target) {
+        return null;
+    }
+
+    @Override
+    public String waggingTail() {
+        return null;
     }
 }

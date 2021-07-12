@@ -4,5 +4,7 @@ import com.example.demo.bicycle.domain.BicycleDTO;
 
 public interface BicycleService {
 
-    String information(BicycleDTO bi);
+    void changingGear();
+    void changingPedalCadence();
+    void applyingBrakes();
 }

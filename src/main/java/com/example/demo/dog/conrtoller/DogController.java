@@ -7,40 +7,28 @@ import com.example.demo.dog.serivce.DogServiceImpl;
 import java.util.Scanner;
 
 public class DogController {
-        Scanner scanner = new Scanner(System.in);
-        DogDTO dog = new DogDTO();
-        DogService dogService = new DogServiceImpl();
+        private DogService dogService;
+        private DogDTO dog;
+        private Scanner scanner;
 
-        public void dog(){
-        System.out.println("색");
-        dog.setColor(scanner.next());
-        System.out.println("품종");
-        dog.setBreed(scanner.next());
-        System.out.println("개체");
-        dog.setKind(scanner.next());
-        String result ="";
-        switch (dog.getKind()){
-            case "":
-                result = dogService.info(dog);
-                break;
-        }
-        System.out.printf( "%s %s %s= %s",
-                dog.getColor(),
-                dog.getBreed(),
-                dog.getKind(),
-                result);
+        public DogController(){
+            this.dogService = new DogServiceImpl();
+            this.dog = new DogDTO();
+            this.scanner = new Scanner(System.in);
     }
 
-public void info(){
-    System.out.println("개 색");
+public void main(){
+    System.out.println("이름이 무엇");
     dog.setColor(scanner.next());
-    System.out.println("개 품종");
+    System.out.println("색깔은 무엇");
+    dog.setColor(scanner.next());
+    System.out.println("품종은 무엇");
     dog.setBreed(scanner.next());
-    System.out.println("개 개체");
-    dog.setKind(scanner.next());
-    String arr = dogService.info(dog);
-        System.out.print("\t");
-        }
+    System.out.println("배고픈가?");
+    dog.setHungry(scanner.next());
+    System.out.println(dog.toString());
+    }
+
 
 }
 
