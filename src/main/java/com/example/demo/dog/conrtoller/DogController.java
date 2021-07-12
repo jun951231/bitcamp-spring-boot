@@ -7,10 +7,11 @@ import com.example.demo.dog.serivce.DogServiceImpl;
 import java.util.Scanner;
 
 public class DogController {
-    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         DogDTO dog = new DogDTO();
         DogService dogService = new DogServiceImpl();
+
+        public void dog(){
         System.out.println("색");
         dog.setColor(scanner.next());
         System.out.println("품종");
@@ -18,18 +19,30 @@ public class DogController {
         System.out.println("개체");
         dog.setKind(scanner.next());
         String result ="";
-        switch (dog.getKind()) {
-
-            case "하얀 진돗개":
-                result = dogService.kind(dog);
+        switch (dog.getKind()){
+            case "":
+                result = dogService.info(dog);
                 break;
         }
         System.out.printf( "%s %s %s= %s",
                 dog.getColor(),
                 dog.getBreed(),
                 dog.getKind(),
-                result
-                );
-
+                result);
     }
+
+public void info(){
+    System.out.println("개 색");
+    dog.setColor(scanner.next());
+    System.out.println("개 품종");
+    dog.setBreed(scanner.next());
+    System.out.println("개 개체");
+    dog.setKind(scanner.next());
+    String arr = dogService.info(dog);
+        System.out.print("\t");
+        }
+
 }
+
+
+

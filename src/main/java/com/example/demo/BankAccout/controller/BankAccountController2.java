@@ -1,6 +1,6 @@
-package com.example.demo.math.controller;
+package com.example.demo.BankAccout.controller;
 
-class BankAccountController {
+class BankAccountController2 {
     String accNumber;   // 계좌번호
     String ssNumebr;    // 주민번호
     int balance = 0;    // 예금 잔액
