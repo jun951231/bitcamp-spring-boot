@@ -11,15 +11,21 @@ package com.example.demo.BankAccount.service;
  * */
 
 import com.example.demo.BankAccount.domain.BankAccountDTO;
+import com.example.demo.bicycle.domain.BicycleDTO;
 import com.sun.xml.internal.ws.api.ha.StickyFeature;
+
+import java.util.List;
 
 public interface BankAccountService {
 
-    void createAccount(BankAccountDTO bank);
-    int findBalance(BankAccountDTO bank);
-    int deposit(BankAccountDTO bank);
-    int withdraw(BankAccountDTO bank);
-    void dropAccount(BankAccountDTO bank);
+    void add(BankAccountDTO bankAccount);
+    int count();
+    List<BankAccountDTO> show();
+    String createAccount(String bank);
+    int findBalance(int balance);
+    int deposit(int deposit);
+    int withdraw(int withdraw);
+    String dropAccount(String bank);
 
 
 }

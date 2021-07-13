@@ -1,42 +1,63 @@
 package com.example.demo.BankAccount.service;
 
+import com.example.demo.BankAccount.controller.BankAccountController;
 import com.example.demo.BankAccount.domain.BankAccountDTO;
+import com.example.demo.bicycle.domain.BicycleDTO;
+import com.example.demo.dog.domain.DogDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
 
 public class BankAccountServiceImpl implements BankAccountService{
    private BankAccountDTO bankAccount;
+   private ArrayList<BankAccountDTO> bankAccounts;
 
-
-
-   @Override
-   public void createAccount(BankAccountDTO bank) {
+   public BankAccountServiceImpl(){
       bankAccount = new BankAccountDTO();
-      String randomNumber = "";
-      bankAccount.setAccountNumber(randomNumber);
-      bankAccount.setName(bank.getName());
+      bankAccounts = new ArrayList<>();
    }
 
    @Override
-   public int findBalance(BankAccountDTO bank) {
-      return bankAccount.getMoney();
+   public void add(BankAccountDTO bankAccount) {
+      bankAccounts.add(bankAccount);
    }
 
    @Override
-   public int deposit(BankAccountDTO bank) {
-      int restMoney = bankAccount.getMoney();
-      bankAccount.setMoney(restMoney + bank.getMoney());
-      return bankAccount.getMoney();
+   public int count() {
+      return bankAccounts.size();
    }
 
    @Override
-   public int withdraw(BankAccountDTO bank) {
-      int restMoney = bankAccount.getMoney();
-      bankAccount.setMoney(restMoney + bank.getMoney());
-      return bankAccount.getMoney();
+   public List<BankAccountDTO> show() {
+      return bankAccounts;
    }
 
    @Override
-   public void dropAccount(BankAccountDTO bank) {
-      bankAccount = new BankAccountDTO();
+   public String createAccount(String bank) {
+      return bankAccount.toString() + bank + "은행";
+   }
+
+   @Override
+   public int findBalance(int bank) {
+      return bankAccount.setBalance() + bank + "잔액";
+   }
+
+   @Override
+   public int deposit(int bank) {
+      return bankAccount.setMoney() + bank + "";
+   }
+
+   @Override
+   public int withdraw(int bank) {
+      return 0;
+   }
+
+   @Override
+   public String dropAccount(String bank) {
 
    }
 }

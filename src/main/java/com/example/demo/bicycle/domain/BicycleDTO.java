@@ -10,6 +10,6 @@ public class BicycleDTO {
 
     @Override
     public String toString() {
-        return String.format("기어: %d \n페달 :%s, \n스피드: %dkm.", gear,pedal, speed);
+        return String.format("기어: %d 단, 페달 :%s, 스피드: %d km인 자전거가 \n", gear, pedal, speed);
     }
 }

@@ -3,33 +3,52 @@ package com.example.demo.dog.conrtoller;
 import com.example.demo.dog.domain.DogDTO;
 import com.example.demo.dog.serivce.DogService;
 import com.example.demo.dog.serivce.DogServiceImpl;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+@Controller
+
 
 public class DogController {
-        private DogService dogService;
-        private DogDTO dog;
-        private Scanner scanner;
 
-        public DogController(){
-            this.dogService = new DogServiceImpl();
-            this.dog = new DogDTO();
-            this.scanner = new Scanner(System.in);
-    }
+    private DogService dogService;
 
-public void main(){
-    System.out.println("이름이 무엇");
-    dog.setColor(scanner.next());
-    System.out.println("색깔은 무엇");
-    dog.setColor(scanner.next());
-    System.out.println("품종은 무엇");
-    dog.setBreed(scanner.next());
-    System.out.println("배고픈가?");
-    dog.setHungry(scanner.next());
-    System.out.println(dog.toString());
+    public DogController(){
+        dogService = new DogServiceImpl();
     }
 
 
+    public void add(DogDTO dog){
+        dogService.add(dog);
+    }
+
+    public int count(){
+        return dogService.count();
+    }
+
+    public void show(){
+        System.out.println("강아지의 수 : "+ dogService.count());
+        System.out.println(dogService.show());
+    }
+
+
+    public String barking(String bark) {
+        return dogService.barking(bark);
+    }
+
+
+    public String fetching(String target) {
+        return dogService.fetching(target);
+    }
+
+
+    public String waggingTail() {
+        return dogService.waggingTail();
+    }
 }
 
 
