@@ -10,4 +10,5 @@ public interface UtilService {
     LocalDate Today();
     LocalTime CurrentTime();
     String todayAndCurrenttime();
+    String randomNumbers(int digit, boolean allowZeroValue);
 }

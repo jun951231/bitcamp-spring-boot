@@ -21,7 +21,6 @@ public class DogController {
         dogService = new DogServiceImpl();
     }
 
-
     public void add(DogDTO dog){
         dogService.add(dog);
     }

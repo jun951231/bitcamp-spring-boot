@@ -14,9 +14,12 @@ public class BankAccountDTO {
 
     @Override
     public String toString(){
-        return String.format("이름 : %s, 계좌번호 : %s, 입금 : %d 원, 잔액 : %d 원," +
-                " 날짜 : %s, 이자 : %d 원, 은행이름 : 비트은행 \n", name, accountNumber, money, balance,
-                date, interest, Bank_Name);
+        return Bank_Name + " : " +
+                "예금주=' " + name + '\'' +
+                ", 계좌번호=' " + accountNumber + '\'' +
+                ", 잔고=" + balance +
+                ", 거래일자=' " + date + '\'' +
+                ", 이자율=" + interest + "\n";
     }
 
 }

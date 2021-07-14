@@ -1,5 +1,6 @@
 package com.example.demo.dog.serivce;
 
+import com.example.demo.bicycle.domain.BicycleDTO;
 import com.example.demo.dog.domain.DogDTO;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -10,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-
 public class DogServiceImpl implements DogService {
+
     private DogDTO dog;
-    private ArrayList<DogDTO> dogs;
+    private List<DogDTO> dogs;
 
     public DogServiceImpl(){
         dog = new DogDTO();

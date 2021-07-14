@@ -42,11 +42,4 @@ public class BicycleController/*main*/{
         return bicycleService.applyingBrakes();
     }
 
-
-
-
-
-
-
-
 }

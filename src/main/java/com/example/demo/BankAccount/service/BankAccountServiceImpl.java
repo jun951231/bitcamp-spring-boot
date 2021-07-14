@@ -2,6 +2,8 @@ package com.example.demo.BankAccount.service;
 
 import com.example.demo.BankAccount.controller.BankAccountController;
 import com.example.demo.BankAccount.domain.BankAccountDTO;
+import com.example.demo.util.service.UtilService;
+import com.example.demo.util.service.UtilServiceImpl;
 import com.example.demo.bicycle.domain.BicycleDTO;
 import com.example.demo.dog.domain.DogDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,52 +16,64 @@ import java.util.List;
 
 public class BankAccountServiceImpl implements BankAccountService{
    private BankAccountDTO bankAccount;
-   private ArrayList<BankAccountDTO> bankAccounts;
-
-   public BankAccountServiceImpl(){
-      bankAccount = new BankAccountDTO();
-      bankAccounts = new ArrayList<>();
-   }
-
-   @Override
-   public void add(BankAccountDTO bankAccount) {
-      bankAccounts.add(bankAccount);
-   }
+   private List<BankAccountDTO> bankAccounts;
 
    @Override
    public int count() {
-      return bankAccounts.size();
+      return bankAccount.getMoney();
    }
 
    @Override
-   public List<BankAccountDTO> show() {
+   public List<?> findAll() {
       return bankAccounts;
    }
 
    @Override
-   public String createAccount(String bank) {
-      return bankAccount.toString() + bank + "은행";
+   public String[] findAllAccountNumber() {
+      String[] accountNumbers = new String[count()];
+      for(int i = 0; i< accountNumbers.length; i++){
+      
+      }
+      return new String[0];
+   }
+
+   public  BankAccountServiceImpl(){
+      bankAccount = new BankAccountDTO();
+      bankAccounts = new ArrayList<>();
+   }
+   @Override
+   public void createAccount(BankAccountDTO bank) {
+      UtilService utilService = new UtilServiceImpl();
+      //if(){}
+      String accountNumber = utilService.randomNumbers(4, false) + "-" +
+            utilService.randomNumbers(4, true)+ "-" +
+            utilService.randomNumbers(4, true);
+      bank.setAccountNumber("");
+      bankAccounts.add(bank);
    }
 
    @Override
-   public int findBalance(int bank) {
-      return bankAccount.setBalance() + bank + "잔액";
+   public int findBalance(BankAccountDTO bank) {
+      return bankAccount.getMoney();
    }
 
    @Override
-   public int deposit(int bank) {
-      return bankAccount.setMoney() + bank + "";
+   public int deposit(BankAccountDTO bank) {
+      int restMoney = bankAccount.getMoney();
+      bankAccount.setMoney(restMoney + bank.getMoney());
+      return bankAccount.getMoney();
    }
 
    @Override
-   public int withdraw(int bank) {
+   public int withdraw(BankAccountDTO bank) {
       return 0;
    }
 
    @Override
-   public String dropAccount(String bank) {
+   public void dropAccount(BankAccountDTO bank) {
 
    }
+
 }
 
 

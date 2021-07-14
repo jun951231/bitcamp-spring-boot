@@ -22,7 +22,7 @@ public class HomeController {
         DogController dogController = new DogController();
         BicycleController bicycleController = new BicycleController();
         while(true){
-                System.out.println("\n[메뉴] 0.종료 1.계산기 2.수열 3.개등록 33.개목록 4. 자전거등록 44.자전거목록 5.오늘날짜");
+                System.out.println("\n[메뉴] 0.종료 1.계산기 2.수열 3.개등록 33.개목록 4. 자전거등록 44.자전거목록 5.오늘날짜 6.비트은행");
                 switch (scanner.next()){
                     case "0": return;
                     case "1": new CalculatorController().calculate(); break;
@@ -55,6 +55,7 @@ public class HomeController {
                     case "44":
                         bicycleController.show();
                     case "5": new UtilController().todayAndCurrentTime(); break;
+                    case "6": new BankAccountController().main(); break;
                 }
         }
     }
