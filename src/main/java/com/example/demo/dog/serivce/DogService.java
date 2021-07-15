@@ -10,7 +10,7 @@ public interface DogService {
 
     void add(DogDTO dog);
     int count();
-    List<DogDTO> show();
+    List<?> show();
     String barking (String bark);
     String fetching (String target);
     String waggingTail();

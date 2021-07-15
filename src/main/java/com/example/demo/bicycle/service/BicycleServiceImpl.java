@@ -9,8 +9,8 @@ import java.util.List;
 @Service
 
 public class BicycleServiceImpl implements BicycleService{
-    private BicycleDTO bicycle;
-    private ArrayList<BicycleDTO> bicycles;
+    private final BicycleDTO bicycle;
+    private final List<BicycleDTO> bicycles;
 
     public BicycleServiceImpl(){
         bicycle= new BicycleDTO();
@@ -34,18 +34,18 @@ public class BicycleServiceImpl implements BicycleService{
     }
 
     @Override
-    public String changingGear(String gear) {
-        return bicycle.toString()+ gear + "기어";
+    public void changingGear() {
+
     }
 
     @Override
-    public String changingPedalCadence(String pedal) {
-        return bicycle.toString()+ pedal + "페달";
+    public void changingPedalCadence() {
+
     }
 
     @Override
-    public String applyingBrakes() {
-        return "브레이크";
+    public void applyingBrakes() {
+
     }
 
 }

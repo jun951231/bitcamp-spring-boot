@@ -1,17 +1,16 @@
 package util.service;
 
-import java.util.Random;
 
-public class UtilServiceImplTest {
+import com.example.demo.util.service.LambdaUtils;
+
+
+public class UtilServiceImplTest extends LambdaUtils {
     public static void main(String[] args){
-        Random random = new Random();
         String result = "";
-        for (int i = 0; i<4; i++){
+        for(int i=0; i<4; i++){
             result += (int) (Math.random() * 10);
         }
-
-        System.out.println(result);
-
+        print.accept(result);
     }
 }
 

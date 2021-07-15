@@ -3,13 +3,14 @@ package com.example.demo.BankAccount.domain;
 import lombok.Data;
 
 @Data
-public class BankAccountDTO {
+public class AccountDTO {
+
     private String name;
     private String accountNumber;
-    private int money;
-    private int balance;
+    private String money;
+    private String balance;
     private String date;
-    private float interest;
+    private String interest;
     public static final String Bank_Name = "비트은행";
 
     @Override

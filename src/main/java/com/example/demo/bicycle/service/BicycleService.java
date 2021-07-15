@@ -9,8 +9,8 @@ public interface BicycleService {
     void add(BicycleDTO bicycle);
     int count();
     List<BicycleDTO> show();
-    String changingGear(String gear);
-    String changingPedalCadence(String pedal);
-    String applyingBrakes();
+    void changingGear();
+    void changingPedalCadence();
+    void applyingBrakes();
 
 }

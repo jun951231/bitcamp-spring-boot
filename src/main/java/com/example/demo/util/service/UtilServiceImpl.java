@@ -4,7 +4,6 @@ import com.example.demo.util.domain.UtilDTO;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Random;
 
 public class UtilServiceImpl implements UtilService{
 
