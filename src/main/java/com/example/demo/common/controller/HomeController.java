@@ -5,22 +5,26 @@ import com.example.demo.bicycle.controller.BicycleController;
 import com.example.demo.dog.conrtoller.DogController;
 import com.example.demo.math.controller.MathController;
 import com.example.demo.util.controller.UtilController;
+import com.example.demo.himart.controller.HimartController;
 
 
 import java.util.Scanner;
+
 public class HomeController {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        DogController dogController = new DogController();
         while(true){
-                System.out.println("\n[메뉴] 0.종료 1.유틸 2.계산기 3.개 4. 자전거등록 6.비트은행 7.하이마트");
+                System.out.println("\n[메뉴] 0.종료 1.유틸 2.계산기 3.개 4.자전거 5.하이마트 6.비트은행 ");
                 switch (scanner.next()){
                     case "0": return;
                     case "1": new UtilController().main(); break;
                     case "2": new MathController().main(); break;
                     case "3": new DogController().main(); break;
                     case "4": new BicycleController().main(); break;
+                    case "5": new HimartController().main(); break;
                     case "6": new BankController().main(); break;
+
+
                 }
         }
     }
